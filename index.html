@@ -4,35 +4,83 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Đặc sản trên bản</title>
+  <meta name="description" content="Website bán đặc sản Tây Bắc: thịt trâu gác bếp, thịt lợn gác bếp, lạp xưởng, rượu mận, rượu tam thất." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
+  <header class="hero" id="home">
     <nav class="nav">
-      <div class="logo">Đặc sản trên bản</div>
-      <a href="#products">Sản phẩm</a>
-      <a href="#order">Đặt hàng</a>
-      <a href="#guide">Hướng dẫn</a>
+      <a class="logo" href="#home" aria-label="Đặc sản trên bản">
+        <span class="logo-mark">ĐS</span>
+        <span>Đặc sản trên bản</span>
+      </a>
+      <div class="nav-links">
+        <a href="#products">Sản phẩm</a>
+        <a href="#about">Câu chuyện</a>
+        <a href="#order">Đặt hàng</a>
+        <a href="#payment">Thanh toán</a>
+      </div>
     </nav>
+
     <div class="hero-content">
-      <p class="eyebrow">Hương vị Tây Bắc</p>
+      <p class="eyebrow">Hương vị Tây Bắc trong từng món quà</p>
       <h1>Đặc sản trên bản</h1>
-      <p>Thịt gác bếp, lạp xưởng và rượu đặc sản được chọn lọc từ bản làng, thơm ngon, đậm vị truyền thống.</p>
-      <a class="btn" href="#products">Xem món ngay</a>
+      <p class="hero-text">Thịt gác bếp thơm mùi khói, lạp xưởng đậm vị núi rừng và rượu đặc sản được tuyển chọn kỹ lưỡng. Giao hàng nhanh, đóng gói sạch đẹp, phù hợp làm quà biếu.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#products">Mua ngay</a>
+        <a class="btn ghost" href="#about">Khám phá câu chuyện</a>
+      </div>
+      <div class="hero-stats" aria-label="Thông tin nổi bật">
+        <div><b>18+</b><span>Sản phẩm</span></div>
+        <div><b>6</b><span>Món mỗi trang</span></div>
+        <div><b>QR</b><span>Thanh toán nhanh</span></div>
+      </div>
     </div>
   </header>
 
   <main>
+    <section class="section intro" id="about">
+      <div class="section-title left">
+        <p class="eyebrow">Câu chuyện sản phẩm</p>
+        <h2>Quà ngon từ bản làng, giữ trọn vị truyền thống</h2>
+        <p>Các món đặc sản được giới thiệu với hình ảnh rõ ràng, giá niêm yết minh bạch, thao tác đặt hàng đơn giản. Website phù hợp để giới thiệu sản phẩm địa phương và nhận đơn trực tuyến.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span>🔥</span>
+          <h3>Chuẩn vị gác bếp</h3>
+          <p>Hương khói thơm, vị cay nhẹ, dùng ăn chơi hoặc làm quà đều đẹp.</p>
+        </article>
+        <article class="feature-card">
+          <span>🧺</span>
+          <h3>Đóng gói gọn gàng</h3>
+          <p>Sản phẩm được phân loại rõ ràng, dễ chọn số lượng và đặt mua.</p>
+        </article>
+        <article class="feature-card">
+          <span>📱</span>
+          <h3>Đặt hàng dễ dàng</h3>
+          <p>Chọn món, điền thông tin, gửi đơn và quét QR để thanh toán.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="products">
       <div class="section-title">
-        <p class="eyebrow">Danh mục</p>
-        <h2>18 loại đồ ăn, phân trang 6 món/trang</h2>
+        <p class="eyebrow">Gian hàng đặc sản</p>
+        <h2>Danh sách 18 sản phẩm</h2>
+        <p>Tìm kiếm nhanh, lọc theo danh mục và phân trang 6 món mỗi trang.</p>
       </div>
 
       <div class="tools">
-        <input id="searchInput" type="search" placeholder="Tìm kiếm: thịt trâu, rượu mận..." />
-        <select id="categoryFilter">
-          <option value="all">Tất cả</option>
+        <label class="search-box" aria-label="Tìm kiếm sản phẩm">
+          <span>🔎</span>
+          <input id="searchInput" type="search" placeholder="Tìm kiếm: thịt trâu, rượu mận, lạp xưởng..." />
+        </label>
+        <select id="categoryFilter" aria-label="Lọc danh mục">
+          <option value="all">Tất cả danh mục</option>
           <option value="Thịt gác bếp">Thịt gác bếp</option>
           <option value="Rượu đặc sản">Rượu đặc sản</option>
           <option value="Đồ khô">Đồ khô</option>
@@ -40,66 +88,79 @@
       </div>
 
       <div id="productGrid" class="grid"></div>
-      <div id="pagination" class="pagination"></div>
+      <div id="pagination" class="pagination" aria-label="Phân trang sản phẩm"></div>
     </section>
 
-    <section class="section two-col" id="order">
-      <div>
+    <section class="section order-section" id="order">
+      <div class="section-title left">
         <p class="eyebrow">Giỏ hàng</p>
-        <h2>Đặt hàng</h2>
-        <div id="cartBox" class="cart-box">Chưa có sản phẩm nào trong giỏ.</div>
+        <h2>Kiểm tra đơn và gửi thông tin</h2>
+        <p>Khách hàng chọn sản phẩm, nhập địa chỉ nhận hàng. Sau đó chuyển khoản theo mã QR ở phần thanh toán.</p>
       </div>
 
-      <form id="orderForm" class="order-form" target="hidden_iframe">
-        <h3>Thông tin khách hàng</h3>
-        <label>Họ và tên
-          <input required name="name" placeholder="Nguyễn Văn A" />
-        </label>
-        <label>Số điện thoại
-          <input required name="phone" placeholder="09xxxxxxxx" />
-        </label>
-        <label>Địa chỉ nhận hàng
-          <textarea required name="address" rows="3" placeholder="Số nhà, xã/phường, tỉnh/thành"></textarea>
-        </label>
-        <label>Ghi chú
-          <textarea name="note" rows="3" placeholder="Ví dụ: giao buổi chiều"></textarea>
-        </label>
-        <input type="hidden" name="orderDetail" id="orderDetail" />
-        <button type="submit" class="btn full">Gửi đơn hàng</button>
-        <p class="small">Sau khi bấm gửi, website sẽ tạo nội dung đơn hàng để lưu vào Google Sheet/Email nếu bạn cấu hình Google Form.</p>
-      </form>
+      <div class="order-layout">
+        <div class="cart-box">
+          <div class="cart-head">
+            <h3>Đơn hàng của bạn</h3>
+            <button id="clearCartBtn" type="button">Xóa giỏ</button>
+          </div>
+          <div id="cartBox">Chưa có sản phẩm nào trong giỏ.</div>
+        </div>
+
+        <form id="orderForm" class="order-form" target="hidden_iframe">
+          <h3>Thông tin khách hàng</h3>
+          <div class="form-row">
+            <label>Họ và tên
+              <input required name="name" placeholder="Nguyễn Văn A" />
+            </label>
+            <label>Số điện thoại
+              <input required name="phone" placeholder="09xxxxxxxx" />
+            </label>
+          </div>
+          <label>Địa chỉ nhận hàng
+            <textarea required name="address" rows="3" placeholder="Số nhà, xã/phường, tỉnh/thành"></textarea>
+          </label>
+          <label>Ghi chú
+            <textarea name="note" rows="3" placeholder="Ví dụ: giao buổi chiều, đóng gói làm quà..."></textarea>
+          </label>
+          <input type="hidden" name="orderDetail" id="orderDetail" />
+          <button type="submit" class="btn primary full">Gửi đơn hàng</button>
+          <p class="small">Sau khi gửi đơn, vui lòng quét mã QR để thanh toán. Cửa hàng sẽ liên hệ xác nhận trước khi giao.</p>
+        </form>
+      </div>
       <iframe name="hidden_iframe" class="hidden"></iframe>
     </section>
 
-    <section class="section payment">
-      <div>
+    <section class="section payment" id="payment">
+      <div class="payment-text">
         <p class="eyebrow">Thanh toán</p>
-        <h2>Quét QR để thanh toán</h2>
-        <p>Thay ảnh QR bên dưới bằng mã QR của bạn. Không cần dùng API.</p>
+        <h2>Quét mã QR để chuyển khoản</h2>
+        <p>Vui lòng ghi nội dung chuyển khoản theo cú pháp bên dưới để cửa hàng đối chiếu đơn nhanh hơn.</p>
+        <div class="bank-note">
+          <b>Nội dung chuyển khoản:</b>
+          <span>DSBAN + Số điện thoại</span>
+        </div>
       </div>
       <div class="qr-card">
-        <div class="qr-placeholder">Dán ảnh QR<br/>vào file<br/><b>assets/qr-thanh-toan.png</b></div>
-        <p>Nội dung chuyển khoản: <b>DSBAN + SĐT</b></p>
+        <img class="qr-image" src="assets/qr-thanh-toan.jpg" alt="Mã QR thanh toán BIDV" />
+        <div class="bank-info">
+          <p>Chủ tài khoản</p><b>ROAN HUYEN TRANG</b>
+          <p>Ngân hàng</p><b>BIDV - CN Lào Cai</b>
+          <p>Số tài khoản</p><b>3750337357</b>
+        </div>
       </div>
-    </section>
-
-    <section class="section" id="guide">
-      <p class="eyebrow">Hướng dẫn nộp bài</p>
-      <h2>Cách cấu hình Google Form, Google Sheet, Email và upload GitHub</h2>
-      <ol class="guide-list">
-        <li>Tạo Google Form gồm các câu hỏi: Họ tên, Số điện thoại, Địa chỉ, Ghi chú, Chi tiết đơn hàng.</li>
-        <li>Trong Google Form, bấm <b>Câu trả lời</b> → liên kết với Google Sheet để tự lưu đơn.</li>
-        <li>Trong Google Form hoặc Google Sheet, bật thông báo email khi có câu trả lời mới.</li>
-        <li>Mở file <b>script.js</b>, thay <b>GOOGLE_FORM_ACTION</b> và các mã <b>entry.xxxxx</b> bằng mã của form thật.</li>
-        <li>Đưa toàn bộ thư mục lên GitHub: tạo repository → Upload files → Commit → Settings → Pages → chọn branch main.</li>
-      </ol>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Đặc sản trên bản. Thiết kế phục vụ bài thực hành website.</p>
+    <div>
+      <h2>Đặc sản trên bản</h2>
+      <p>Thơm vị khói bếp - đậm tình bản làng.</p>
+    </div>
+    <a class="btn ghost footer-btn" href="#products">Tiếp tục mua hàng</a>
   </footer>
 
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
 </html>
