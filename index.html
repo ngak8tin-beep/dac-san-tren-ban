@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đặc sản trên bản</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="logo">Đặc sản trên bản</div>
+      <a href="#products">Sản phẩm</a>
+      <a href="#order">Đặt hàng</a>
+      <a href="#guide">Hướng dẫn</a>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">Hương vị Tây Bắc</p>
+      <h1>Đặc sản trên bản</h1>
+      <p>Thịt gác bếp, lạp xưởng và rượu đặc sản được chọn lọc từ bản làng, thơm ngon, đậm vị truyền thống.</p>
+      <a class="btn" href="#products">Xem món ngay</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="products">
+      <div class="section-title">
+        <p class="eyebrow">Danh mục</p>
+        <h2>18 loại đồ ăn, phân trang 6 món/trang</h2>
+      </div>
+
+      <div class="tools">
+        <input id="searchInput" type="search" placeholder="Tìm kiếm: thịt trâu, rượu mận..." />
+        <select id="categoryFilter">
+          <option value="all">Tất cả</option>
+          <option value="Thịt gác bếp">Thịt gác bếp</option>
+          <option value="Rượu đặc sản">Rượu đặc sản</option>
+          <option value="Đồ khô">Đồ khô</option>
+        </select>
+      </div>
+
+      <div id="productGrid" class="grid"></div>
+      <div id="pagination" class="pagination"></div>
+    </section>
+
+    <section class="section two-col" id="order">
+      <div>
+        <p class="eyebrow">Giỏ hàng</p>
+        <h2>Đặt hàng</h2>
+        <div id="cartBox" class="cart-box">Chưa có sản phẩm nào trong giỏ.</div>
+      </div>
+
+      <form id="orderForm" class="order-form" target="hidden_iframe">
+        <h3>Thông tin khách hàng</h3>
+        <label>Họ và tên
+          <input required name="name" placeholder="Nguyễn Văn A" />
+        </label>
+        <label>Số điện thoại
+          <input required name="phone" placeholder="09xxxxxxxx" />
+        </label>
+        <label>Địa chỉ nhận hàng
+          <textarea required name="address" rows="3" placeholder="Số nhà, xã/phường, tỉnh/thành"></textarea>
+        </label>
+        <label>Ghi chú
+          <textarea name="note" rows="3" placeholder="Ví dụ: giao buổi chiều"></textarea>
+        </label>
+        <input type="hidden" name="orderDetail" id="orderDetail" />
+        <button type="submit" class="btn full">Gửi đơn hàng</button>
+        <p class="small">Sau khi bấm gửi, website sẽ tạo nội dung đơn hàng để lưu vào Google Sheet/Email nếu bạn cấu hình Google Form.</p>
+      </form>
+      <iframe name="hidden_iframe" class="hidden"></iframe>
+    </section>
+
+    <section class="section payment">
+      <div>
+        <p class="eyebrow">Thanh toán</p>
+        <h2>Quét QR để thanh toán</h2>
+        <p>Thay ảnh QR bên dưới bằng mã QR của bạn. Không cần dùng API.</p>
+      </div>
+      <div class="qr-card">
+        <div class="qr-placeholder">Dán ảnh QR<br/>vào file<br/><b>assets/qr-thanh-toan.png</b></div>
+        <p>Nội dung chuyển khoản: <b>DSBAN + SĐT</b></p>
+      </div>
+    </section>
+
+    <section class="section" id="guide">
+      <p class="eyebrow">Hướng dẫn nộp bài</p>
+      <h2>Cách cấu hình Google Form, Google Sheet, Email và upload GitHub</h2>
+      <ol class="guide-list">
+        <li>Tạo Google Form gồm các câu hỏi: Họ tên, Số điện thoại, Địa chỉ, Ghi chú, Chi tiết đơn hàng.</li>
+        <li>Trong Google Form, bấm <b>Câu trả lời</b> → liên kết với Google Sheet để tự lưu đơn.</li>
+        <li>Trong Google Form hoặc Google Sheet, bật thông báo email khi có câu trả lời mới.</li>
+        <li>Mở file <b>script.js</b>, thay <b>GOOGLE_FORM_ACTION</b> và các mã <b>entry.xxxxx</b> bằng mã của form thật.</li>
+        <li>Đưa toàn bộ thư mục lên GitHub: tạo repository → Upload files → Commit → Settings → Pages → chọn branch main.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Đặc sản trên bản. Thiết kế phục vụ bài thực hành website.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
